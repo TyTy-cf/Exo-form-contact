@@ -1,7 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% form_theme formContact 'bootstrap_4_layout.html.twig' %}
 
 {% block body %}
-    {{ form(formContact) }}
+    <div class="container mt-2">
+        <div class="col-6">
+            {{ form_errors(formContact) }}
+            {{ form(formContact, {attr: {'novalidate': 'novalidate'}}) }}
+        </div>
+    </div>
 {% endblock %}

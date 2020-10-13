@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <div class="container">
+        <h4 class="mt-2">Rappel de vos informations de contact :</h4>
+        <div>
+            <div class="form-group row">
+                <label class="font-weight-bold col-3">
+                Nom
+                </label>
+                <div class="col-auto">
+                    {{ contactData.nom }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="font-weight-bold col-3">
+                    Prénom
+                </label>
+                <div class="col-auto">
+                    {{ contactData.prenom }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="font-weight-bold col-3">
+                    Email
+                </label>
+                <div class="col-auto">
+                    {{ contactData.email }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="font-weight-bold col-3">
+                    Objet
+                </label>
+                <div class="col-auto">
+                    {{ contactData.objet }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="font-weight-bold col-3">
+                    Message
+                </label>
+                <div class="col-auto">
+                    {{ contactData.message }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="font-weight-bold col-3">
+                    Numéro de téléphone
+                </label>
+                <div class="col-auto">
+                    {% if contactData.numeroTelephone|length == 0 %}
+                        Non renseigné
+                    {% else %}
+                        {{ contactData.numeroTelephone }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
